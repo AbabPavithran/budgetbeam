@@ -1,0 +1,41 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\Hash;
+
+class ProfileController extends Controller
+{
+   public function update(Request $request)
+{
+    $user = auth()->user();
+
+    $request->validate([
+        'name' => 'required|string|max:255',
+        'email' => 'required|email',
+        'avatar' => 'nullable|image|max:2048', // 2MB
+    ]);
+
+    // Handle avatar upload
+    if ($request->hasFile('avatar')) {
+
+        // Delete old avatar if exists
+        if ($user->avatar) {
+            Storage::disk('public')->delete($user->avatar);
+        }
+
+        $path = $request->file('avatar')
+                        ->store('avatars', 'public');
+
+        $user->avatar = $path;
+    }
+
+    $user->name = $request->name;
+    $user->email = $request->email;
+    $user->save();
+
+    return back()->with('success', 'Profile updated');
+}
+}
