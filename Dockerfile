@@ -37,7 +37,8 @@ RUN composer install --no-dev --optimize-autoloader || true
 # Set permissions
 RUN chown -R www-data:www-data /var/www/html/storage /var/www/html/bootstrap/cache
 
-# Make entrypoint executable
+# Fix line endings from Windows and make executable
+RUN sed -i -e 's/\r$//' entrypoint.sh
 RUN chmod +x entrypoint.sh
 
 # Expose port 80
