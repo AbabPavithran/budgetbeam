@@ -6,9 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="64x64" href="{{ asset('favicon-64x64.png') }}">
-
-<link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
+<link rel="shortcut icon" href="/favicon.ico">
     {{-- Theme styles --}}
     <style>
         /* Eye-Strain Friendly Light Mode */
@@ -308,7 +307,7 @@ body.dark .moon {
             <img
                 src="{{ auth()->user()->avatar
                         ? asset('storage/' . auth()->user()->avatar)
-                        : 'https://ui-avatars.com/api/?name=' . urlencode(auth()->user()->name)
+                        : 'data:image/svg+xml;base64,' . base64_encode('<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"#0d6efd\"/><text x=\"50\" y=\"50\" font-family=\"Arial\" font-size=\"40\" fill=\"#fff\" text-anchor=\"middle\" dominant-baseline=\"central\">' . strtoupper(substr(auth()->user()->name, 0, 1)) . '</text></svg>')
                 }}"
                 class="rounded-circle"
                 width="32"

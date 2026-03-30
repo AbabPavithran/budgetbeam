@@ -51,17 +51,9 @@
                 <!-- PROFILE SUMMARY -->
                 <div class="d-flex align-items-center gap-3 mb-4">
                     <div>
-                        @if(auth()->user()->avatar)
-                            <img src="{{ asset('storage/' . auth()->user()->avatar) }}"
-                                 class="rounded-circle"
-                                 style="width:72px;height:72px;object-fit:cover;">
-                        @else
-                            <div class="rounded-circle bg-primary text-white d-flex
-                                        align-items-center justify-content-center fw-bold"
-                                 style="width:72px;height:72px;font-size:24px;">
-                                {{ strtoupper(substr(auth()->user()->name, 0, 1)) }}
-                            </div>
-                        @endif
+                        <img src="{{ auth()->user()->avatar ? asset('storage/' . auth()->user()->avatar) : 'data:image/svg+xml;base64,' . base64_encode('<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 100 100\"><rect width=\"100\" height=\"100\" fill=\"#0d6efd\"/><text x=\"50\" y=\"50\" font-family=\"Arial\" font-size=\"40\" fill=\"#fff\" text-anchor=\"middle\" dominant-baseline=\"central\">' . strtoupper(substr(auth()->user()->name, 0, 1)) . '</text></svg>') }}"
+                             class="rounded-circle"
+                             style="width:72px;height:72px;object-fit:cover;">
                     </div>
 
                     <div>
@@ -148,9 +140,13 @@
                 <p class="text-muted mb-3">
                     Deleting your account is permanent and cannot be undone.
                 </p>
-                <button class="btn btn-danger" disabled>
-                    Delete Account
-                </button>
+                <form method="POST" action="{{ route('account.destroy') }}" onsubmit="return confirm('Are you completely sure you want to permanently delete your account? This action cannot be undone.')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">
+                        Delete Account
+                    </button>
+                </form>
             </div>
 
         </div>

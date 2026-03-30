@@ -23,3 +23,19 @@ services:
         value: "base64:QHXAhlCTz9dX8FkXHXqBHrNZm9nlixhBNJX93VOlHE8="
       - key: APP_DEBUG
         value: false
+      - key: MAIL_MAILER
+        value: smtp
+      - key: MAIL_HOST
+        value: smtp.gmail.com
+      - key: MAIL_PORT
+        value: 587
+      - key: MAIL_USERNAME
+        value: "ababpavithran2003@gmail.com"
+      - key: MAIL_PASSWORD
+        value: "wexuyagwicvrjrrd"
+      - key: MAIL_ENCRYPTION
+        value: tls
+      - key: MAIL_FROM_ADDRESS
+        value: "ababpavithran2003@gmail.com"
+      - key: MAIL_FROM_NAME
+        value: "BudgetBeam"
