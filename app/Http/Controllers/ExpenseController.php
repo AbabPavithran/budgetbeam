@@ -83,8 +83,9 @@ class ExpenseController extends Controller
                 return redirect()->back()->with('error', 'Payment failed: Low wallet balance. Please top up your wallet first.');
             }
 
-            // Deduct balance
-            $wallet->decrement('balance', $request->amount);
+            // Explicitly Deduct balance from Wallet Top-Up
+            $wallet->balance -= $request->amount;
+            $wallet->save();
 
             // Record Transaction
             $wallet->transactions()->create([
