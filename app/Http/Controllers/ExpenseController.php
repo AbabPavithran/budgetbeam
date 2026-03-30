@@ -77,15 +77,17 @@ class ExpenseController extends Controller
         $user = auth()->user();
         
         if ($request->payment_method === 'wallet') {
-            $wallet = $user->wallet;
+            $wallet = \App\Models\Wallet::firstOrCreate(
+                ['user_id' => $user->id],
+                ['balance' => 0]
+            );
 
-            if (!$wallet || $wallet->balance < $request->amount) {
+            if ($wallet->balance < $request->amount) {
                 return redirect()->back()->with('error', 'Payment failed: Low wallet balance. Please top up your wallet first.');
             }
 
             // Explicitly Deduct balance from Wallet Top-Up
-            $wallet->balance -= $request->amount;
-            $wallet->save();
+            $wallet->decrement('balance', $request->amount);
 
             // Record Transaction
             $wallet->transactions()->create([

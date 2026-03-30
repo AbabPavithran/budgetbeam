@@ -7,18 +7,17 @@ use Illuminate\Http\Request;
 class WalletController extends Controller
 {
     // 🔹 Top up wallet balance + log transaction
+    // 🔹 Top up wallet balance + log transaction
     public function topUp(Request $request)
     {
         $request->validate([
             'amount' => 'required|numeric|min:1',
         ]);
 
-        $wallet = auth()->user()->wallet;
-
-        // Safety check (optional, but wise)
-        if (!$wallet) {
-            return back()->withErrors('Wallet not found.');
-        }
+        $wallet = \App\Models\Wallet::firstOrCreate(
+            ['user_id' => auth()->id()],
+            ['balance' => 0]
+        );
 
         // 1️⃣ Update balance
         $wallet->increment('balance', $request->amount);
@@ -30,11 +29,14 @@ class WalletController extends Controller
             'description' => 'Wallet top-up',
         ]);
 
-        return back();
+        return back()->with('success', 'Wallet topped up successfully');
     }
     public function index()
 {
-    $wallet = auth()->user()->wallet;
+    $wallet = \App\Models\Wallet::firstOrCreate(
+        ['user_id' => auth()->id()],
+        ['balance' => 0]
+    );
     return view('wallet.index', compact('wallet'));
 }
 public function payment(Request $request)
@@ -55,11 +57,10 @@ public function confirmPayment(Request $request)
         'method' => 'required|in:upi,bank,card',
     ]);
 
-    $wallet = auth()->user()->wallet;
-
-    if (!$wallet) {
-        return redirect()->route('dashboard')->with('error', 'Critical Error: Wallet not found for this user.');
-    }
+    $wallet = \App\Models\Wallet::firstOrCreate(
+        ['user_id' => auth()->id()],
+        ['balance' => 0]
+    );
 
     // Simulate successful payment
     $wallet->increment('balance', $request->amount);
