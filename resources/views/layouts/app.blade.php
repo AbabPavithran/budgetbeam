@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png">
-<link rel="shortcut icon" href="/favicon.ico">
+<link rel="icon" type="image/png" sizes="64x64" href="/favicon-64x64.png?v=2">
+<link rel="shortcut icon" href="/favicon.ico?v=2">
     {{-- Theme styles --}}
     <style>
         /* Eye-Strain Friendly Light Mode */
