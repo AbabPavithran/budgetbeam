@@ -38,4 +38,22 @@ class ProfileController extends Controller
 
     return back()->with('success', 'Profile updated');
 }
+
+public function destroy(Request $request)
+{
+    $user = auth()->user();
+
+    // Delete avatar if exists
+    if ($user->avatar) {
+        Storage::disk('public')->delete($user->avatar);
+    }
+
+    auth()->logout();
+    $user->delete();
+
+    $request->session()->invalidate();
+    $request->session()->regenerateToken();
+
+    return redirect('/')->with('success', 'Your account has been permanently deleted.');
+}
 }

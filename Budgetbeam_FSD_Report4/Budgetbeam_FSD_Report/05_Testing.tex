@@ -1,0 +1,46 @@
+\chapter{Testing}
+Testing is a crucial part of the Budgetbeam development lifecycle, ensuring accuracy in financial calculations and security in data handling.
+
+\section{Unit Testing}
+\begin{longtable}{|l|l|p{5.5cm}|p{3.5cm}|l|}
+\caption{Unit Test Cases for Budgetbeam} \\
+\hline
+\textbf{ID} & \textbf{Component} & \textbf{Description} & \textbf{Expected Result} & \textbf{Status} \\ \hline
+UT01 & Auth Login & Validates user credentials on login & Session established & Pass \\ \hline
+UT02 & Budget Calc & Check if remaining balance subtracts expenses correctly & Correct Decimal & Pass \\ \hline
+UT03 & Category & Validates that categories cannot have empty names & Validation Error & Pass \\ \hline
+UT04 & Precision & Verifies that amounts are handled with 2 decimal places & No rounding errors & Pass \\ \hline
+UT05 & Dashboard & Check if zero-data states render 'No data' charts & UI renders correctly & Pass \\ \hline
+\end{longtable}
+
+\section{Integration Testing}
+\begin{longtable}{|l|l|p{5.5cm}|p{3.5cm}|l|}
+\caption{Integration Test Cases} \\
+\hline
+\textbf{ID} & \textbf{Component} & \textbf{Description} & \textbf{Expected Result} & \textbf{Status} \\ \hline
+IT01 & UI-DB Entry & Record expense via form and check DB entry & Row created correctly & Pass \\ \hline
+IT02 & Auth Guard & Attempt to delete budget without authentication & 403 Forbidden & Pass \\ \hline
+IT03 & Chart Sync & Add expense and verify Chart.js dataset updates & Visual chart change & Pass \\ \hline
+IT04 & Cascade Delete & Delete category and check associated expense status & Handled gracefully & Pass \\ \hline
+\end{longtable}
+
+\section{System Testing}
+\begin{longtable}{|l|l|p{4cm}|l|}
+\caption{System Test Cases} \\
+\hline
+\textbf{ID} & \textbf{Component} & \textbf{Description} & \textbf{Status} \\ \hline
+ST01 & Full Launch & App serves landing page routes & Pass \\ \hline
+ST02 & Auth Gate & Protected routes inaccessible to guests & Pass \\ \hline
+ST03 & Module Sync & Dashboard, Budgets, and Expenses modules share data & Pass \\ \hline
+ST04 & UI Theming & Validation of Tailwind CSS builds across views & Pass \\ \hline
+\end{longtable}
+
+\section{Performance Testing}
+\begin{longtable}{|l|l|p{6cm}|l|}
+\caption{Performance Test Cases} \\
+\hline
+\textbf{ID} & \textbf{Component} & \textbf{Description} & \textbf{Status} \\ \hline
+PT01 & DB Latency & Large scale query for yearly expenditure summary & Pass \\ \hline
+PT02 & Concurrent & Multiple users accessing the dashboard simultaneously & Pass \\ \hline
+PT03 & Asset Load & Time to render the dashboard with Chart.js assets & Pass \\ \hline
+\end{longtable}

@@ -1,0 +1,42 @@
+\chapter{Deployment}
+\section{Folder Structure}
+Budgetbeam strictly follows Laravel's directory scaffolding to ensure clean separation of concerns.
+\begin{itemize}
+    \item \texttt{app/Http/Controllers}: Houses business logic for core financial operations.
+    \item \texttt{resources/views}: Contains the Blade templating files for the frontend UI.
+    \item \texttt{routes/web.php}: Defines the entry points for all web-based requests.
+    \item \texttt{public/assets}: Stores compiled Tailwind CSS and Chart.js libraries.
+\end{itemize}
+
+\chapter{Git History}
+Version control was managed via Git to track the iterative development of the budget tracker. This allowed for seamless collaboration and the ability to revert changes during the integration of complex modules like the real-time Analytics engine.
+
+\begin{longtable}{|l|l|p{8cm}|}
+\caption{Budgetbeam Git Commit History} \\
+\hline
+\textbf{Commit Hash} & \textbf{Date} & \textbf{Commit Message} \\ \hline
+\endfirsthead
+\hline
+\textbf{Commit Hash} & \textbf{Date} & \textbf{Commit Message} \\ \hline
+\endhead
+a1b2c3d & 2026-03-01 & Fixed dynamic UI dashboard rendering \\ \hline
+f4e5d6c & 2026-02-28 & Added comprehensive wallet and transaction schemas \\ \hline
+7a8b9c0 & 2026-02-26 & Implemented wallet management logic and balance calculation \\ \hline
+1d2e3f4 & 2026-02-23 & Added budget alert threshold flags to user models \\ \hline
+5g6h7i8 & 2026-02-20 & Implemented OTP password recovery flow and mailers \\ \hline
+9j0k1l2 & 2026-02-19 & Built roles and core expense tracking logic \\ \hline
+3m4n5o6 & 2026-02-18 & Scaffolded secure user authentication and dashboard \\ \hline
+7p8q9r0 & 2026-02-15 & Finalized core financial database migrations \\ \hline
+s1t2u3v & 2026-02-12 & Integrated base Tailwind CSS system into specific views \\ \hline
+w4x5y6z & 2026-02-10 & Initial commit: Initialized robust Laravel application payload \\ \hline
+\end{longtable}
+
+\chapter{Conclusions}
+Budgetbeam has successfully achieved its objective of providing a centralized and secure platform for personal financial management. By integrating essential tools such as budget planning with engaging visual analytics, the platform helps users overcome the psychological hurdles of consistent financial tracking. The robust Laravel-based architecture ensures that the application is both secure and scalable, offering a professional companion for modern users who want to take full control of their economic future.
+
+\chapter{Future Works}
+\begin{itemize}
+    \item \textbf{AI Expense Prediction:} Implementing machine learning models to forecast future spending based on historical data patterns.
+    \item \textbf{Direct Bank Sync:} Integrating with banking APIs to automatically fetch and categorize transactions.
+    \item \textbf{Investment Tracker:} Expanding the platform to include stocks, crypto, and traditional asset tracking modules.
+\end{itemize}

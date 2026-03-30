@@ -133,6 +133,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/settings/profile', [ProfileController::class, 'update']);
     Route::post('/settings/password', [PasswordController::class, 'update']);
     Route::post('/settings/theme', [ThemeController::class, 'update']);
+    Route::delete('/settings/account', [ProfileController::class, 'destroy'])->name('account.destroy');
 
     Route::post('/theme', function () {
         auth()->user()->update([
@@ -166,6 +167,10 @@ Route::middleware('auth')->group(function () {
         return back()->with('budget_set', 'Monthly budget updated');
     });
 });
+
+
+
+
 
 
 

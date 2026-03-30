@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TopScore Project Report Cover</title>
+    <style>
+        /* Basic reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* The A4 Paper Canvas */
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+            color: #000000;
+        }
+
+        /* Top Padding Container */
+        .content-wrapper {
+            padding: 25mm 20mm 0 20mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Header Text */
+        .header-text {
+            text-align: center;
+            font-size: 17pt; 
+            line-height: 1.6;
+            color: #000000; 
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            font-weight: 800; 
+        }
+
+        /* College Logo Tag */
+        .college-logo {
+            width: 115px;
+            height: auto;
+            max-height: 115px;
+            margin-bottom: 30px;
+            object-fit: contain;
+        }
+
+        /* Project Titles */
+        .degree-title {
+            font-size: 16pt;
+            color: #111;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .report-type {
+            font-size: 15pt;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600; 
+        }
+
+        .project-name {
+            text-align: center;
+            font-size: 34pt;
+            font-weight: 800;
+            color: #2F5597; /* A nice academic blue for TopScore */
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .project-subtitle {
+            display: block;
+            font-size: 19pt;
+            font-weight: 600; 
+            color: #444; 
+            letter-spacing: 1px;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Student Details Table */
+        .student-details {
+            font-size: 14pt;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .student-details td {
+            padding: 10px 12px;
+            vertical-align: middle;
+        }
+
+        .col-label {
+            text-align: left;
+            width: 130px;
+            font-weight: 800; 
+            color: #000;
+        }
+
+        .col-colon {
+            text-align: center;
+            width: 20px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .col-value {
+            text-align: left;
+            color: #111;
+            font-weight: 600; 
+        }
+
+        /* Footer Image Section */
+        .footer-image-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 48%; 
+            z-index: 1;
+            background-color: #5c7bda; /* Matches the blue bg of the graduation cap image */
+        }
+
+        .car-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Keeps the graduation cap from stretching */
+            object-position: center bottom;
+        }
+
+        /* The Gradient Overlay (This creates the smooth blend!) */
+        .gradient-overlay {
+            position: absolute;
+            top: -1px; 
+            left: 0;
+            width: 100%;
+            height: 55%; 
+            background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0) 100%);
+        }
+
+        /* =========================================
+           BULLETPROOF PRINT SETTINGS
+           ========================================= */
+        @page {
+            size: A4;
+            margin: 0; 
+        }
+
+        @media print {
+            body { 
+                background: none; 
+                display: block; 
+            }
+            .a4-page { 
+                box-shadow: none; 
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+            }
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        
+        <div class="content-wrapper">
+            <div class="header-text">
+                DEPARTMENT OF COMPUTER SCIENCE<br>
+                RAJAGIRI COLLEGE OF SOCIAL SCIENCES<br>
+                (AUTONOMOUS)<br>
+                KALAMASSERY-KOCHI-683104
+            </div>
+
+            <img src="RCSS.png" alt="Rajagiri College Logo" class="college-logo" onerror="this.style.display='none'">
+
+            <div class="degree-title">BSc Computer Science (Hons.) Data Analytics</div>
+            <div class="report-type">WPL Project Report</div>
+            
+            <div class="project-name">
+                TopScore
+                <span class="project-subtitle" style="color: #444;">Quiz Management System</span>
+            </div>
+
+            <table class="student-details">
+                <tr>
+                    <td class="col-label">Name</td>
+                    <td class="col-colon">:</td>
+                    <td class="col-value">Amal Biju</td>
+                </tr>
+                <tr>
+                    <td class="col-label">Semester</td>
+                    <td class="col-colon">:</td>
+                    <td class="col-value">4th Semester</td>
+                </tr>
+                <tr>
+                    <td class="col-label">Register No.</td>
+                    <td class="col-colon">:</td>
+                    <td class="col-value">24118005</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer-image-container">
+            <!-- This exact overlay makes the image fade seamlessly into the white page -->
+            <div class="gradient-overlay"></div>
+            
+            <!-- Scalable pure SVG of a glowing golden graduation cap so it works instantly -->
+            <div class="car-image" style="display: flex; justify-content: center; align-items: flex-end; padding-bottom: 30px;">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" width="60%" height="60%" style="margin-bottom: 20px;">
+                    <!-- Golden Yellow Graduation Cap -->
+                    <path fill="#FFD700" d="M622.3 256.4L355 136.2c-20.9-9.4-44.5-9.4-65.4 0L22.4 256.4c-15.5 6.9-15.5 28.5 0 35.4l41.6 18.7c-1.3 5-2.2 10.3-2.2 15.8v109.1c0 23.3 16.5 44 39.3 49.3 48.7 11.4 105.7 18.2 165.7 18.2s117-6.8 165.7-18.2c22.8-5.3 39.3-26 39.3-49.3V326.3c0-5.5-.9-10.8-2.2-15.8l63-28.3c15.6-6.9 15.6-28.5 0-35.4zM332.3 185.6c6.6-2.9 14.1-2.9 20.7 0l183.1 82-183.1 82c-6.6 2.9-14.1 2.9-20.7 0L149.2 267.6l183.1-82zM463.6 407.1c-38.3 11-82.6 11-121.2 0-25.5-7.3-34.5-12.7-34.5-22.3v-54.6l64.2 28.8c18.5 8.3 39.2 8.3 57.7 0l68.2-30.5v72.5c0 9.7-9.1 15-34.4 22.4z"/>
+                    <!-- Drooping Left Tassel -->
+                    <path fill="#FFB300" d="M86.5 282.5c4.7 9.8 13.9 16.8 24.6 18.8 10.7 2.1 21.8-.8 29.8-7.9 8-7 12-17.7 10.5-28.4l-12-87 54.4-24.5-98.1-44-67.9 30.4 58.7 142.6z"/>
+                </svg>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

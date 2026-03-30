@@ -1,0 +1,138 @@
+\begin{titlepage}
+    % --- DOUBLE BORDER CODE ---
+    \begin{tikzpicture}[remember picture, overlay]
+        % Outer thick border
+        \draw[line width=2pt]
+        ($(current page.north west) + (1.5cm,-1.5cm)$)
+        rectangle
+        ($(current page.south east) + (-1.5cm,1.5cm)$);
+        
+        % Inner thin border
+        \draw[line width=0.5pt]
+        ($(current page.north west) + (1.6cm,-1.6cm)$)
+        rectangle
+        ($(current page.south east) + (-1.6cm,1.6cm)$);
+    \end{tikzpicture}
+    % --------------------------
+
+    \centering
+    \vspace*{0.5cm}
+    
+    \textbf{\Large DEPARTMENT OF COMPUTER SCIENCE}\\[0.3cm]
+    \textbf{\Large RAJAGIRI COLLEGE OF SOCIAL SCIENCES}\\[0.1cm]
+    \textbf{\Large (Autonomous)}\\[1.5cm]
+
+    \includegraphics[width=4cm]{RCSS.png}\\[1.5cm] 
+    
+    \textbf{\Large BSc. Computer Science(Hons.)}\\[0.1cm]
+    \textbf{\Large Data Analytics}\\[1.5cm]
+
+    \large 2024- 2028\\[1cm]
+    
+    \textbf{\Large <SUBJECT CODE>}\\[0.8cm]
+    
+    {\Large FSD Project Report}\\[0.8cm]
+    
+    Budgetbeam: Personal Budget Tracking Platform\\[2cm]
+    
+    \begin{table}[h]
+    \centering
+    \renewcommand{\arraystretch}{1.5}
+    \begin{tabular}{p{3.5cm} c l}
+    \textbf{NAME} & \textbf{:} & \textbf{Abab P K} \\
+    \textbf{SEMESTER} & \textbf{:} & \textbf{<sem>} \\
+    \textbf{REGISTER NO.} & \textbf{:} & \textbf{24118002} \\
+    \end{tabular}
+    \end{table}
+
+\end{titlepage}
+
+\newpage
+\thispagestyle{empty}
+\begin{flushright}
+\small Budgetbeam
+\end{flushright}
+\vspace{-0.5cm}
+\noindent\rule{\textwidth}{0.8pt}
+
+\vspace{0.3cm}
+\begin{center}
+\includegraphics[width=3cm]{RCSS.png}
+
+\vspace{0.2cm}
+\textbf{\large DEPARTMENT OF COMPUTER SCIENCE}
+
+\vspace{0.3cm}
+\textbf{\Large RAJAGIRI COLLEGE OF SOCIAL SCIENCES}\\
+\textbf{\large (Autonomous)}\\
+\vspace{0.1cm}
+\textbf{\large KALAMASSERY - KOCHI - 683104}
+
+\vspace{0.3cm}
+\textbf{\large BSc Computer Science (Hons.) Data Analytics}
+
+\vspace{0.3cm}
+\textbf{\Large CERTIFICATE}
+\end{center}
+
+\vspace{0.2cm}
+
+\begin{table}[h]
+\centering
+\begin{tabular}{p{3cm} c l}
+\textbf{NAME} & : & \textbf{Abab P K} \\
+\textbf{SEMESTER} & : & \textbf{<sem>} \\
+\textbf{REGISTER NO.} & : & \textbf{24118002} \\
+\end{tabular}
+\end{table}
+
+\vspace{0.2cm}
+
+\noindent \textit{Certified that this is a Bonafide record of project work done by \textbf{Abab P K} in the Software Laboratory of \textbf{<subject code>}, during the academic year 2024-2028, in partial fulfilment of requirements for award of the degree, Bachelor of Computer Science (Hons.) Data Analytics of Rajagiri College of Social Sciences (Autonomous).}
+
+\vspace{1cm}
+
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+\flushleft
+Mr. Ajay Antony Joseph\\
+Faculty Coordinator
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\addtolength{\leftskip}{2cm} % Adjust to align with the name
+Dr. Bindiya M Varghese\\
+Dean, Computer Science
+\end{minipage}
+
+\vspace{1.5cm}
+
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+\flushleft
+Internal Examiner
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.45\textwidth}
+\addtolength{\leftskip}{2cm}
+External Examiner
+\end{minipage}
+
+\vspace{1.5cm}
+
+\noindent
+\begin{minipage}[t]{0.45\textwidth}
+\flushleft
+Place : Kalamassery\\
+Date : \today
+\end{minipage}
+
+\chapter*{Acknowledgement}
+\addcontentsline{toc}{chapter}{Acknowledgement}
+With heartfelt gratitude, I extend my deepest thanks to the Almighty for His unwavering grace and blessings. I am immensely thankful to Dr. Bindiya M Varghese, Head of the Department of Computer Science, and Mr. Ajay Antony Joseph, my Faculty Guide, for their invaluable guidance and timely advice. Their constant supervision and provision of essential information were instrumental in the successful completion of the Project. I also extend my profound thanks to all the professors in the department and the entire staff at RCSS for their support. Finally, I am grateful to my family and friends for their encouragement and assistance throughout this endeavor.
+
+\chapter*{Abstract}
+\addcontentsline{toc}{chapter}{Abstract}
+Budgetbeam is a sophisticated personal finance and budget tracking platform engineered to empower users with precise control over their financial behavior. Developed using the Laravel 12.x web framework and PHP 8.2, Budgetbeam provides a streamlined environment to manage incomes, track daily expenses, and establish detailed monthly budgets.
+
+The platform integrates several high-impact modules, including a Dynamic Dashboard for real-time overview of financial health, an Automated Expense Categorization system, and a Financial Milestone tracker that incentivizes saving through visual rewards. By leveraging the security of PostgreSQL for ACID-compliant transactions and the interactivity of Chart.js for data visualization, Budgetbeam ensures a professional and reliable experience. The system is designed to redefine modern personal task management and financial literacy for students and professionals alike, creating a rewarding digital workspace for long-term fiscal discipline.

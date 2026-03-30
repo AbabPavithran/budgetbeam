@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Budgetbeam Project Report Cover</title>
+    <style>
+        /* Basic reset */
+        body, html {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        /* The A4 Paper Canvas */
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            background-color: #ffffff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            box-sizing: border-box;
+            overflow: hidden;
+            color: #000000;
+        }
+
+        /* Top Padding Container */
+        .content-wrapper {
+            padding: 25mm 20mm 0 20mm;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            z-index: 10;
+        }
+
+        /* Header Text */
+        .header-text {
+            text-align: center;
+            font-size: 17pt; 
+            line-height: 1.6;
+            color: #000000; 
+            letter-spacing: 0.5px;
+            margin-bottom: 25px;
+            font-weight: 800; 
+        }
+
+        /* College Logo Tag */
+        .college-logo {
+            width: 115px;
+            height: auto;
+            max-height: 115px;
+            margin-bottom: 30px;
+            object-fit: contain;
+        }
+
+        /* Project Titles */
+        .degree-title {
+            font-size: 16pt;
+            color: #111;
+            margin-bottom: 12px;
+            font-weight: 600;
+        }
+
+        .report-type {
+            font-size: 15pt;
+            color: #333;
+            margin-bottom: 12px;
+            font-weight: 600; 
+        }
+
+        .project-name {
+            text-align: center;
+            font-size: 34pt;
+            font-weight: 800;
+            color: #000;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+            line-height: 1.1;
+        }
+
+        .project-subtitle {
+            display: block;
+            font-size: 19pt;
+            font-weight: 600; 
+            color: #444; 
+            letter-spacing: 1px;
+            margin-top: 8px;
+            text-transform: uppercase;
+        }
+
+        /* Student Details Table */
+        .student-details {
+            font-size: 14pt;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+
+        .student-details td {
+            padding: 10px 12px;
+            vertical-align: middle;
+        }
+
+        .col-label {
+            text-align: left;
+            width: 130px;
+            font-weight: 800; 
+            color: #000;
+        }
+
+        .col-colon {
+            text-align: center;
+            width: 20px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .col-value {
+            text-align: left;
+            color: #111;
+            font-weight: 600; 
+        }
+
+        /* Footer Image Section */
+        .footer-image-container {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 48%; 
+            z-index: 1;
+            background-color: transparent; 
+        }
+
+        .car-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center bottom;
+        }
+
+        /* The Gradient Overlay */
+        .gradient-overlay {
+            position: absolute;
+            top: -1px; 
+            left: 0;
+            width: 100%;
+            height: 55%; 
+            background: linear-gradient(to bottom, #ffffff 0%, rgba(255,255,255,0.9) 25%, rgba(255,255,255,0) 100%);
+        }
+
+        /* =========================================
+           BULLETPROOF PRINT SETTINGS
+           ========================================= */
+        @page {
+            size: A4;
+            margin: 0; /* Forces the browser to drop its default borders */
+        }
+
+        @media print {
+            body { 
+                background: none; 
+                display: block; /* Removes flex centering during print */
+            }
+            .a4-page { 
+                box-shadow: none; 
+                width: 210mm;
+                height: 297mm;
+                margin: 0;
+            }
+            /* Forces background colors and gradients to print */
+            * {
+                -webkit-print-color-adjust: exact !important;
+                print-color-adjust: exact !important;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="a4-page">
+        
+        <div class="content-wrapper">
+            <div class="header-text">
+                DEPARTMENT OF COMPUTER SCIENCE<br>
+                RAJAGIRI COLLEGE OF SOCIAL SCIENCES<br>
+                (AUTONOMOUS)<br>
+                KALAMASSERY-KOCHI-683104
+            </div>
+
+            <img src="RCSS.png" alt="Rajagiri College Logo" class="college-logo" onerror="this.style.display='none'">
+
+            <div class="degree-title">BSc Computer Science (Hons.) Data Analytics</div>
+            <div class="report-type">WPL Project Report</div>
+            
+            <div class="project-name" style="color: #D4AF37;">
+                Budgetbeam
+                <span class="project-subtitle" style="color: #444;">Personal Budget Tracking Platform</span>
+            </div>
+
+            <table class="student-details">
+                <tr>
+                    <td class="col-label">Name</td>
+                    <td class="col-colon">:</td>
+                    <td class="col-value">Abab P K</td>
+                </tr>
+                <tr>
+                    <td class="col-label">Semester</td>
+                    <td class="col-colon">:</td>
+                    <td class="col-value">4</td>
+                </tr>
+                <tr>
+                    <td class="col-label">Register No.</td>
+                    <td class="col-colon">:</td>
+                    <td class="col-value">24118002</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="footer-image-container">
+            <div class="gradient-overlay"></div>
+            <img src="budgetbeam_custom_logo_word.png" alt="Budgetbeam Custom Cover" class="car-image" onerror="this.style.display='none'">
+        </div>
+
+    </div>
+
+</body>
+</html>
