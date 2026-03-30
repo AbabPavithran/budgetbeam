@@ -23,11 +23,11 @@ class ProfileController extends Controller
 
         // Delete old avatar if exists
         if ($user->avatar) {
-            Storage::disk('public')->delete($user->avatar);
+            Storage::disk(config('filesystems.default') === 'local' ? 'public' : 's3')->delete($user->avatar);
         }
 
-        $path = $request->file('avatar')
-                        ->store('avatars', 'public');
+        $disk = config('filesystems.default') === 'local' ? 'public' : 's3';
+        $path = $request->file('avatar')->store('avatars', $disk);
 
         $user->avatar = $path;
     }
@@ -45,7 +45,8 @@ public function destroy(Request $request)
 
     // Delete avatar if exists
     if ($user->avatar) {
-        Storage::disk('public')->delete($user->avatar);
+        $disk = config('filesystems.default') === 'local' ? 'public' : 's3';
+        Storage::disk($disk)->delete($user->avatar);
     }
 
     auth()->logout();
