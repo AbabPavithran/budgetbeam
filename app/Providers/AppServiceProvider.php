@@ -28,11 +28,11 @@ class AppServiceProvider extends ServiceProvider
         // 2️⃣ Share wallet balance with all views
         View::composer('*', function ($view) {
             if (Auth::check()) {
-                $user = Auth::user()->loadMissing('wallet');
+                $wallet = \App\Models\Wallet::where('user_id', Auth::id())->first();
 
                 $view->with(
                     'walletBalance',
-                    $user->wallet->balance ?? 0
+                    $wallet->balance ?? 0
                 );
             }
         });
